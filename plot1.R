@@ -1,5 +1,10 @@
+cat("Installing required packages (if necessary)...\n")
+if("data.table" %in% rownames(installed.packages()) == FALSE) {
+  install.packages("plyr")
+}
+
 cat("Reading data from file. Please Wait!\n")
-data<-fread("./data/household_power_consumption.txt", colClasses = "character", na.strings="?", sep=";", header = TRUE)
+data <- fread("./data/household_power_consumption.txt", colClasses = "character", na.strings="?", sep=";", header = TRUE)
 data$Date <- as.Date(data$Date, format= "%d/%m/%Y")
 
 cat("Subsetting required data for plot.\n")
