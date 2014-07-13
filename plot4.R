@@ -1,3 +1,16 @@
+cat("Downloading and extracting files (if necessary) ...\n")
+if(!file.exists("./data/household_power_consumption.txt")) {
+  url = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+  download.file(url,destfile="./data/household_power_consumption.zip", method="curl")
+  unzip("./data/household_power_consumption.zip", exdir = "./data")
+}
+
+cat("Installing and loading required packages...\n")
+if("data.table" %in% rownames(installed.packages()) == FALSE) {
+  install.packages("data.table")
+}
+library(data.table)
+
 cat("Installing required packages (if necessary)...\n")
 if("data.table" %in% rownames(installed.packages()) == FALSE) {
   install.packages("plyr")
