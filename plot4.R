@@ -33,7 +33,7 @@ with( data_sub, plot(datetime, Voltage, type="l", xlab="datetime"))
 with( data_sub, plot(datetime, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering"))
 with( data_sub, lines(datetime, Sub_metering_2, type="l", col = "red") )
 with( data_sub, lines(datetime, Sub_metering_3, type="l", col = "blue") )
-legend( "topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), bty="n", lty = rep(1,times=3), col=c("black","blue","red"), cex = 0.75 )
+legend( "topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), bty = "n", lty = rep(1,times=3), col=c("black","blue","red"), y.intersp = 0.25, cex = 0.80, adj = 0.1)
 with( data_sub, plot(datetime, Global_reactive_power, type="l"))
 
 dev.copy(png,file="./plot4.png",height=480, width=480)
